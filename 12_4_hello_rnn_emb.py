@@ -33,6 +33,8 @@ class Model(nn.Module):
         self.rnn = nn.RNN(input_size=embedding_size,
                           hidden_size=5, batch_first=True)
         self.fc = nn.Linear(hidden_size, num_classes)
+        self.num_layers = num_layers
+        self.hidden_size = hidden_size
 
     def forward(self, x):
         # Initialize hidden and cell states
